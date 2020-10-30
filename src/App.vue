@@ -1,29 +1,32 @@
 <template>
-<div id="app">
+  <div id="app">
     <component :is="layout">
-        <router-view />
+      <router-view />
     </component>
-</div>
+  </div>
 </template>
 
 <script>
-import emptyLayout from '@/layouts/emptyLayout'
-import mainLayout from '@/layouts/mainLayout'
+import emptyLayout from "@/layouts/emptyLayout";
+import mainLayout from "@/layouts/mainLayout";
 export default {
-    computed: {
-        layout() {
-            console.log(this.$route.meta)
-            return (this.$route.meta.layout || 'empty') + '-layout'
-        }
-    },
-    components: {
-        emptyLayout,
-        mainLayout
+  computed: {
+    layout() {
+      return (this.$route.meta.layout || "empty") + "-layout";
     }
-}
+  },
+  components: {
+    emptyLayout,
+    mainLayout
+  }
+};
 </script>
 
 <style lang="scss">
-@import '../node_modules/materialize-css/dist/css/materialize.min';
-@import 'assets/index.css';
+@import "../node_modules/materialize-css/dist/css/materialize.min";
 </style>
+
+<style lang="scss">
+@import "assets/index.css";
+</style>
+
