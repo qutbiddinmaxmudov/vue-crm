@@ -8,7 +8,7 @@ import "materialize-css/dist/js/materialize.min";
 
 Vue.config.productionTip = false;
 
-Vue.filer("date", dateFilter);
+Vue.filter("date", dateFilter);
 
 new Vue({
   router,
